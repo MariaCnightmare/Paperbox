@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "paperbox"
+version = "0.1.0"
+description = "Local-first paper/PDF text extraction, indexing, search, summarize, compare, and relationship graph CLI."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name="paperbox contributors"}]
+dependencies = [
+  "typer>=0.12.0",
+  "rich>=13.7.0",
+  "pypdf>=4.2.0",
+  "python-docx>=1.1.2",
+  "beautifulsoup4>=4.12.0",
+  "lxml>=5.2.0",
+  "scikit-learn>=1.4.0",
+  "numpy>=1.26.0",
+  "janome>=0.5.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0.0",
+  "reportlab>=4.0.0",
+]
+
+[project.scripts]
+paperbox = "paperbox.cli:app"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
