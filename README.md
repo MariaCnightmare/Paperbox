@@ -21,6 +21,28 @@ pip install -U pip
 pip install -e ".[dev]"
 ```
 
+## Quick Start
+
+```bash
+# 1) init
+paperbox init ./my_papers
+
+# 2) ingest
+paperbox ingest ./samples --project ./my_papers
+
+# 3) search
+paperbox search "causality AND system" --project ./my_papers --top 10
+
+# 4) summarize
+paperbox summarize 1 --project ./my_papers --sentences 8
+
+# 5) compare
+paperbox compare 1 2 --project ./my_papers --top-terms 18
+
+# 6) graph
+paperbox graph --project ./my_papers --threshold 0.25 --format mermaid > graph.md
+```
+
 ## 使い方（最短）
 
 ```bash
